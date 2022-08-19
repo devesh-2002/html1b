@@ -5,13 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        *{
+            padding : 2px 10px;
+        
+        }
+        embed{
+            width:175px;
+            height: 175px;
+            float:right;
+            margin-right:10px;
+            border-radius:50%;
+            border: 4px dotted red;
+        }
+        #sleeve{
+            background-color:blue;
+            color:white;
+            font-weight:bold;
+        }
+        .tagline{
+            background-color:green;
+            color:white;
+            font-weight:bold;
+
+        }
+        td > input,select {
+            font-size:18px
+        }
+        b,u{
+            color:red;
+            font-size:17px;
+        }
+        input.Submit{
+            background-color:blue;
+            color:white;
+        }
+        /* Psuedo classes */
+        input.Submit:hover{
+            background-color:yellow;
+            color:black;
+            transition : 5s;
+        }
+        h1[target="__header"]{
+            color:darkblue;
+            text-shadow: 0 0 3px #FF0000;
+
+        }
+        h1::first-letter{
+            color:maroon;
+
+        }
+
+    </style>
 </head>
 <body style="background-color: lightblue" >
-   <header align="center"><h1>Place an Order for T-shirts here</h1></header> 
-   <embed src="photo.png" width="175" height="175" style="float:right;padding-right:30px">
+   <header align="center"><h1 target="__header">Place an Order for T-shirts here</h1></header> 
+   <embed src="photo.png">
    <form>
     <table align="center">
-        <tr>
+    <tr>
    <td> <label for="tagline"><b><u>Type a Tagline:</u></b></label></td>
    <td> <input type="text" id="tagline" name="tagline" value=""><br></td> 
 </tr>
@@ -49,16 +102,15 @@
 <tr>
     <td><label><b><u>Type of T Shirt Sleeve :</u></b></label></td>
     <td>
-<select id="sleeve">
+<select id="sleeve" class="sleeve">
    <option value="o">Long Sleeve</option>
    <option value="">Short Sleeve</option>
-
   </select>
     </td>
 </tr>
 <tr>
-    <td> <label for="tagline"><b><u>Mention the Date  to be delivered : </u></b></label></td>
-    <td> <input type="date" id="tagline" name="tagline" value=""><br></td> 
+    <td> <label for="tagline" ><b><u>Mention the Date  to be delivered : </u></b></label></td>
+    <td> <input type="date" id="tagline" name="tagline" class="tagline" value=""><br></td> 
  </tr>
 <tr>
     <td><label><b><u>Mention the address : </u></b></label></td>
@@ -69,7 +121,7 @@
     </td>
 </tr>
 
-<tr><td><input type="submit" value="Submit"></td></tr>
+<tr><td><input type="submit" value="Submit" class="Submit"></td></tr>
 </table>
     
 
